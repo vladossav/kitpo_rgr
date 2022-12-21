@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/low_panel"
+        android:fillViewport="true">
+        <TextView
+            android:id="@+id/main_text"
+            android:textSize="26sp"
+            android:layout_margin="5dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"/>
+    </ScrollView>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:id="@+id/low_panel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:id="@+id/insert_index_txt"
+            app:layout_constraintStart_toStartOf="@id/insert_btn"
+            app:layout_constraintBaseline_toBaselineOf="@id/insert_index_input"
+            android:text="index:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/insert_index_input"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:maxLength="8"
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@id/insert_index_txt"
+            app:layout_constraintBottom_toTopOf="@id/remove_btn"
+            app:layout_constraintEnd_toEndOf="@id/insert_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/insert_value_txt"
+            app:layout_constraintStart_toStartOf="@id/insert_btn"
+            app:layout_constraintBaseline_toBaselineOf="@id/insert_value_input"
+            android:layout_marginBottom="5dp"
+            android:text="value:"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/insert_value_input"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:maxLength="15"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@id/insert_btn"
+            app:layout_constraintBottom_toTopOf="@id/insert_btn"
+            app:layout_constraintStart_toEndOf="@id/insert_value_txt"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/insert_btn"
+            android:text="insert"
+            android:minWidth="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/remove_btn"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:id="@+id/remove_btn"
+            android:textSize="12sp"
+            android:text="remove"
+            app:layout_constraintStart_toStartOf="@id/balance_btn"
+            app:layout_constraintBottom_toTopOf="@id/balance_btn"
+            app:layout_constraintEnd_toEndOf="@id/balance_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            />
+        <TextView
+            android:id="@+id/remove_index_txt"
+            app:layout_constraintStart_toStartOf="@id/remove_btn"
+            app:layout_constraintBaseline_toBaselineOf="@id/remove_index_input"
+            android:text="index:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/remove_index_input"
+            android:textSize="15sp"
+            android:maxLength="10"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@id/remove_btn"
+            app:layout_constraintStart_toEndOf="@id/remove_index_txt"
+            app:layout_constraintEnd_toEndOf="@id/remove_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/balance_btn"
+            android:text="balance"
+            app:layout_constraintStart_toEndOf="@id/insert_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/save_btn"
+            android:padding="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:id="@+id/show_btn"
+            android:text="show"
+            app:layout_constraintStart_toEndOf="@id/save_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/load_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:id="@+id/save_btn"
+            android:text="save"
+            app:layout_constraintStart_toEndOf="@id/balance_btn"
+            app:layout_constraintEnd_toStartOf="@id/show_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/load_btn"
+            android:text="load"
+            android:minWidth="0dp"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@id/save_btn"
+            app:layout_constraintEnd_toEndOf="@id/save_btn"
+            app:layout_constraintBottom_toTopOf="@id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/remove_index_txt"
+            app:layout_constraintStart_toStartOf="@id/save_btn"
+            app:layout_constraintEnd_toEndOf="@id/show_btn"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
